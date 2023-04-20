@@ -1,20 +1,21 @@
-export abstract class Deck {
-    protected value: any = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"];
+export class Deck {
+    private value: any = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"];
     private suit: string [] = ['♦','♣','♥','♠'];
-    deck: object[]
-    constructor() {
-        this.deck = [];
-        this.createDeck();
-        this.shuffle();
+    
+    constructor(public deck: object[] = []) {
         
     }
-    createDeck(): object[] {
+    createDeck() {
         for (let i = 0; i < this.value.length; i++) {
             for (let j = 0; j < this.suit.length; j++) {
                 this.deck.push({value: this.value[i], suit :this.suit[j]});
             }
         }
-        return this.deck;
+        
+    }
+
+    deckSize():number{
+        return this.deck.length;
     }
 
     shuffle(): object[] {
@@ -26,6 +27,11 @@ export abstract class Deck {
         return deck;
     }
 
-    abstract deal():object;
+    deal():object{
+        if (this.deck.length != 0) {
+          return this.deck.pop()!;
+        }
+        throw new Error("Deck is empty!");
+      }
 
 }
