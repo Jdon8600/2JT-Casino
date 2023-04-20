@@ -134,7 +134,7 @@ function BlackJack() {
         setMessage("Please enter a bet.");
       }
     } else {
-      setMessage("Game Over! Comeback when you have enough points.");
+      setMessage("Game Over! Come back when you have enough points.");
     }
   }
 
@@ -235,7 +235,7 @@ function BlackJack() {
 
   //create ui for blackjack
   return (
-    <div>
+    <div className="bg-slate-100 ">
       <div>
         <h1>BlackJack</h1>
       </div>
@@ -288,6 +288,7 @@ function BlackJack() {
 
       <p>Your Hand ({player.count})</p>
       <table>
+        <tbody>
         <tr>
           {player.cards.map((card, index) => {
             return (
@@ -299,9 +300,11 @@ function BlackJack() {
             );
           })}
         </tr>
+        </tbody>
       </table>
       <p>Dealer Hand ({dealer.count})</p>
       <table>
+        <tbody>
         <tr>
           {dealer.cards.map((card, index) => {
             return (
@@ -313,6 +316,7 @@ function BlackJack() {
             );
           })}
         </tr>
+        </tbody>
       </table>
 
       <p>{message}</p>
