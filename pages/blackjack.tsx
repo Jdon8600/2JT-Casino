@@ -2,11 +2,13 @@ import React from "react";
 import { Player } from "../classes/Player";
 import { Deck } from "@/classes/Deck";
 import Card from "../components/Card";
+import Header from "@/components/Header";
+import Center from "@/components/Center";
+import styled from "styled-components";
 
-interface KeyboardEvent {
-  enterKey: boolean;
-}
-
+const Title = styled.h1`
+  font-size: 1.5rem;
+`;
 function BlackJack() {
   const newGameCss: string =
     "bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded";
@@ -235,11 +237,10 @@ function BlackJack() {
 
   //create ui for blackjack
   return (
-    <div className="bg-slate-100 ">
-      <div>
-        <h1>BlackJack</h1>
-      </div>
-
+    <>
+    <Header/>
+    <Center>
+      <Title>BlackJack</Title>
       <div className="flex space-x-4">
         <button className={newGameCss} onClick={() => startGame()}>
           New Game
@@ -320,7 +321,8 @@ function BlackJack() {
       </table>
 
       <p>{message}</p>
-    </div>
+    </Center>
+    </>
   );
 }
 
