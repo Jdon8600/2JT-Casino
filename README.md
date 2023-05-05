@@ -1,1 +1,1 @@
-This is an e-commerce projects for CISC575 M.S course
+This is an e-commerce project for CISC575 M.S course
