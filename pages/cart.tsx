@@ -224,7 +224,7 @@ export default function CartPage() {
           </Box>
           {!!cartProducts?.length && (
             <Box>
-              <h2> order information </h2>
+              <h2> Order Information </h2>
 
               <Input
                 type="text"

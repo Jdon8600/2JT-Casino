@@ -93,7 +93,7 @@ export default function Header() {
           <StlyedNav mobileNavActive={mobileNavActive}>
             <NavLink href={"/"}>Home</NavLink>
             <NavLink href={"/products"}>All Products</NavLink>
-            {session ? <NavLink href={"/blackjack"}>BlackJack</NavLink> : null}
+            {session ? <NavLink href={"/blackjack"}>Blackjack</NavLink> : null}
             <NavLink href={"/cart"}>Cart ({cartProducts.length})</NavLink>
             {session ? <StyledP>{session?.user?.name}</StyledP> : null}
             {session ? (
